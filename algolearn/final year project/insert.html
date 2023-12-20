@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+        iframe{
+            border: 0px;
+        }
+        #div1{background-color: rgb(98, 189, 228);
+        color: rgb(192, 125, 79);
+
+        }
+        #myselect{
+            background-color:black;
+        color:azure;
+        }
+        #txt{ background-color:black;
+        color:azure;
+        width: 100%;
+        height: 500px;
+        overflow: scroll;
+
+        }
+        button:hover {
+  background-color: rgb(122, 116, 117) !important;
+  opacity: .5;
+}
+
+button:focus {
+  background-color: rgb(121, 107, 109);
+}
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1><center><font color="black">ALGOLEARN</font></center></h1>
+    <div align="right"><a href="home.html" ><button style="background-color: rgb(98, 189, 228);"><font color="black" size="3">Back to Home </font></button></a></div>
+    <div> <iframe src="insertionsort(1).html" frameborder="1" height="700" width="99.7%"></iframe></div>
+    
+
+
+    <button value="Algorithm" onclick="displayal()">Algorithm</button>
+    <button value="C" onclick="displayc()">C</button> 
+    <button  value="JAVA" onclick="displayj()">JAVA</button>
+    <button  value="C++" onclick="displaycp()">C++</button><br>
+        <textarea id="txt" readonly></textarea>
+    <script>
+        var buttons = $('button');
+buttons.click(function() {
+  buttons.css('background-color', 'snow');
+  $(this).css('background-color', 'pink');
+});
+        function displayal(){
+            var cd="Step 1. If the element is the first element, assume that it is already sorted. Return 1. \n Step 2. Pick the next element, and store it separately in a key. \n Step 3. Now, compare the key with all elements in the sorted array. \n Step 4. If the element in the sorted array is smaller than the current element, then move to the next element. Else, shift greater elements in the array towards the right. \n Step 5. Insert the value. \n Step 6. Repeat until the array is sorted. \n ";
+            document.getElementById("txt").value=cd;
+        }
+        function displayc()
+        {
+            var cd="//THIS IS C PROGRAMMING \n/* C Program to sort an array in ascending order using Insertion Sort */ \n #include <stdio.h> \n int main() \n { \n int n, i, j, temp; \n int arr[64]; \n printf(\"Enter number of elements"+"\ "+"n"+"\"); \n scanf("+"%"+"d, &n); \n printf(\"Enter "+"%"+"d integers "+"\ "+"n"+" \", "+"n"+"); \n for (i = 0; i < n; i++) \n { \n scanf("+"%"+"d, &arr[i]); \n } \n for (i = 1 ; i <= n - 1; i++) \n { \n j = i; \n while ( j > 0 && arr[j-1] > arr[j]) \n { \n temp = arr[j]; \n arr[j]   = arr[j-1]; \n arr[j-1] = temp; \n j--; \n } \n } \n printf(\"Sorted list in ascending order:"+"\ "+"n"+"\"); \n for (i = 0; i <= n - 1; i++) \n { \n printf("+"%"+"d"+"\ "+"n"+"\", arr[i]); \n } \n return 0; \n } \n ";
+            document.getElementById("txt").value=cd;
+         
+        }
+        function displayj(){
+            var cd="//THIS IS JAVA PROGRAMMING \n import java.util.Scanner; \n /* Class InsertionSort */ \n public class InsertionSort \n { \n /* Insertion Sort function */ \n public static void sort( int arr[] ) \n { \n int N = arr.length; \n int i, j, temp; \n for (i = 1; i< N; i++) \n { \n j = i; \n temp = arr[i]; \n while (j > 0 && temp < arr[j-1]) { \n arr[j] = arr[j-1]; \n j = j-1; \n } \n arr[j] = temp; \n } \n } \n /* Main method */ \n public static void main(String[] args) \n { \n Scanner scan = new Scanner( System.in );  \n System.out.println(\""+"\ "+"n"+"Insertion Sort Test"+"\ "+"n"+"\"); \n int n, i; \n /* Accept number of elements */ \n System.out.println(\"Enter number of integer elements\"); \n n = scan.nextInt(); \n /* Create integer array on n elements */ \n int arr[] = new int[ n ]; \n /* Accept elements */ \n System.out.println(\""+"\ "+"n"+"Enter "+"n"+" integer elements  \"); \n for (i = 0; i < n; i++) \n arr[i] = scan.nextInt(); \n  /* Call method sort */ \n sort(arr); \n /* Print sorted Array */ \n System.out.println(\""+"\ "+"n"+"Elements after sorting \"); \n for (i = 0; i < n; i++) \n System.out.print(arr[i]+\" \"); \n  System.out.println(); \n} \n } \n "; 
+            document.getElementById("txt").value=cd;
+        }
+        function displaycp(){
+            var cd="//THIS IS Cpp PROGRAMMING \n #include<iostream> \n using namespace std; \n void display(int *array, int size) { \n for(int i = 0; i<size; i++) \n cout << array[i] << \" \"; \n cout << endl; \n } \n void insertionSort(int *array, int size) { \n int key, j; \n for(int i = 1; i<size; i++) { \n key = array[i];//take value \n j = i; \n while(j > 0 && array[j-1]>key) { \n array[j] = array[j-1]; \n j--; \n } \n array[j] = key;   //insert in right place \n } \n } \n int main() { \n int n; \n cout << \"Enter the number of elements: \"; \n cin >> n; \n int arr[n];    //create an array with given number of elements \n cout << \"Enter elements: \" << endl; \n for(int i = 0; i<n; i++) { \n cin >> arr[i]; \n } \n cout <<\"Array before Sorting: \"; \n display(arr, n); \n insertionSort(arr, n); \n cout << \"Array after Sorting: \"; \n display(arr, n); \n } \n";
+            document.getElementById("txt").value=cd;
+        }
+
+    </script>  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+        iframe{
+            border: 0px;
+        }
+        #div1{background-color: rgb(98, 189, 228);
+        color: rgb(192, 125, 79);
+
+        }
+        #myselect{
+            background-color:black;
+        color:azure;
+        }
+        #txt{ background-color:black;
+        color:azure;
+        width: 100%;
+        height: 500px;
+        overflow: scroll;
+
+        }
+        button:hover {
+  background-color: rgb(122, 116, 117) !important;
+  opacity: .5;
+}
+
+button:focus {
+  background-color: rgb(121, 107, 109);
+}
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1><center><font color="black">ALGOLEARN</font></center></h1>
+    <div align="right"><a href="home.html" ><button style="background-color: rgb(98, 189, 228);"><font color="black" size="3">Back to Home </font></button></a></div>
+    <div> <iframe src="binarysearch.html" frameborder="1" height="700" width="99.7%"></iframe></div>
+    
+
+
+    <button value="Algorithm" onclick="displayal()">Algorithm</button>
+    <button value="C" onclick="displayc()">C</button> 
+    <button  value="JAVA" onclick="displayj()">JAVA</button>
+    <button  value="C++" onclick="displaycp()">C++</button><br>
+        <textarea id="txt" readonly></textarea>
+    <script>
+        var buttons = $('button');
+buttons.click(function() {
+  buttons.css('background-color', 'snow');
+  $(this).css('background-color', 'pink');
+});
+        function displayal(){
+          var cd="Mainfunction_algorithm \n 1	Start\n 2	Read array size in k\n 3	Set n=k-1\n 4	Declare an array arr[k] \n 5	Read k elements to arr[]  and  sort  arr[]\n 6	Read number x to search\n 7	Set result = binary(arr,n-1,0,x)\n 8	If result=-1 then print element not found\n 9	Else then print element present at position \"result\"  \n 10	Stop \n  binary()_algorithm \n 1	Start \n 2	If max>=min \n  Then set mid=(max+min)/2 \n  If (arr[mid]==r) \n   Return mid \n  Else if (arr[mid]>r)\n Return binary(arr,mid-1,min,r)  \n  Else  \n   Return binary(arr,max,mid+1,r)  \n 3	  Return -1\n 4	Stop.";
+          document.getElementById("txt").value=cd;
+       }
+       function displayc()
+       {
+           var cd="//THIS IS C PROGRAMMING \n #include <stdio.h>\n int main()\n {\n  int n,x,i,k; \n printf(\"Enter maximum number of elements :\");\n scanf(\""+"%"+"d\","+"&"+"k);\n  n=k-1;\n int arr[k];\n printf(\"Enter numbers in ascending order:\"); \n for(i=0;i<k;i++){\n scanf(\""+"%"+"d\",&arr[i]);\n  }\n printf(\"Enter a number to search :\");\n scanf(\""+"%"+"d\",&x);\n int result=binary(arr,n-1,0,x);\n if(result==-1)\n {\n printf(\"Element not present  \"); \n }\n   else{ printf(\"Element is present at index "+"%"+"d\",result); }\n   return 0;\n }\n int binary(int arr[],int max,int min,int r)\n {\n if(max>=min)\n {\n  int mid=(max+min)/2;\n  if(arr[mid]==r) \n  { return mid; }\n  else if(arr[mid]>r) \n  { return binary(arr,mid-1,min,r); } \n  else { return binary(arr,max,mid+1,r); }\n  }\n return -1;\n }";
+          document.getElementById("txt").value=cd;
+         
+       }
+       function displayj(){
+     var cd="//THIS IS JAVA PROGRAMMING \n import java.util.*;\n public class BinarySearchExample{  \n public static void binarySearch(int arr[], int first, int last, int key){  \n  int mid = (first + last)/2;  \n  while( first <= last ){  \n if ( arr[mid] < key ){  \n   first = mid + 1;     \n }else if ( arr[mid] == key ){   \n   System.out.println(\"Element is found at index: \" + mid);  \n   break;  \n   }else{  \n    last = mid - 1;   \n  }  \n  mid = (first + last)/2; \n } \n if ( first > last ){  \n  System.out.println(\"Element is not found!\");  \n  }  \n } \n public static void main(String args[]){ \n   int a,b,i;\n   Scanner val=new Scanner(System.in);\n  System.out.println(\"Enter the size of array: \");\n  a=val.nextInt();\n int arr[]=new int[a] ; \n System.out.println(\"Enter the elements for the first array\"); \n for(i=0;i<a;i++) \n { arr[i]=val.nextInt(); } \n System.out.println(\"Enter number to search : \"); \n b=val.nextInt();\n int key = b;  \n int last=arr.length-1;  \n binarySearch(arr,0,last,key);     \n }  \n }";
+            document.getElementById("txt").value=cd;
+        }
+        function displaycp(){
+            var cd="//THIS IS Cpp PROGRAMMING \n #include <iostream>  \n #include <conio.h> \n using namespace std; \n int main () \n {  \n  // declaration of the variables and array  \n  int arr[100], st, mid, end, i, num, tgt;   \n  cout << \" Define the size of the array: \" << endl;  \n cin >> num; // get size  \n // enter only sorted array   \n   cout << \" Enter the values in sorted array either ascending or descending order: \" << endl;  \n // use for loop to iterate values \n for (i = 0; i < num; i++)  \n   {  \n      cout << \" arr [\" << i << \"] = \";  \n      cin >> arr[i];   \n  }   \n  // initialize the starting and ending variable's values   \n  st = 0;   \n  end = num - 1; // size of array (num) - 1  \n // define the item or value to be search  \n cout <<\" Define a value to be searched from sorted array: \" << endl;   \n  cin >> tgt;  \n // use while loop to check 'st', should be less than equal to 'end'.  \n  while ( st <= end)  \n  {  n\    // get middle value by splitting into half   \n  mid = ( st + end ) / 2;  \n  /* if we get the target value at mid index, print the position and exit from the program. */  \n if (arr[mid] == tgt)  \n   {  \n    cout << \" Element is found at index \" << (mid + 1);  \n    exit (0); // use for exit program the program  \n   }  \n  // check the value of target element is greater than the mid element' value  \n  else if ( tgt > arr[mid]) \n  {      st = mid + 1; // set the new value for st variable  \n   }   \n  // check the value of target element is less than the mid element' value   \n else if ( tgt < arr[mid])  \n  {  \n    end = mid - 1; // set the new value for end variable   \n   }  \n }  \n cout << \" Number is not found.\" << endl;  \n  return 0;  \n}";
+            document.getElementById("txt").value=cd;
+        }
+
+    </script>  
+</div>
+
+</body>
+</html>

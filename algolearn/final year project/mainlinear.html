@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+        iframe{
+            border: 0px;
+        }
+        #div1{background-color: rgb(98, 189, 228);
+        color: rgb(192, 125, 79);
+
+        }
+        #myselect{
+            background-color:black;
+        color:azure;
+        }
+        #txt{ background-color:black;
+        color:azure;
+        width: 100%;
+        height: 500px;
+        overflow: scroll;
+
+        }
+        button:hover {
+  background-color: rgb(122, 116, 117) !important;
+  opacity: .5;
+}
+
+button:focus {
+  background-color: rgb(121, 107, 109);
+}
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1><center><font color="black">ALGOLEARN</font></center></h1>
+    <div align="right"><a href="home.html" ><button style="background-color: rgb(98, 189, 228);"><font color="black" size="3">Back to Home </font></button></a></div>
+    <div> <iframe src="linearsearch.html"   height="700" width="99.7%"></iframe></div>
+    
+
+
+    <button value="Algorithm" onclick="displayal()">Algorithm</button>
+    <button value="C" onclick="displayc()">C</button> 
+    <button  value="JAVA" onclick="displayj()">JAVA</button>
+    <button  value="C++" onclick="displaycp()">C++</button><br>
+        <textarea id="txt" readonly></textarea>
+    <script>
+        var buttons = $('button');
+buttons.click(function() {
+  buttons.css('background-color', 'snow');
+  $(this).css('background-color', 'pink');
+});
+        function displayal(){
+            var cd="Linear_Search(a, n, val) // 'a' is the given array, 'n' is the size of given array, 'val' is the value to search  \n Step 1: set pos = -1  \n Step 2: set i = 1  \n Step 3: repeat step 4 while i <= n  \n Step 4: if a[i] == val \n  set pos = i \n  print pos \n  go to step 6  \n [end of if]  \n set ii = i + 1  \n[end of loop]  \nStep 5: if pos = -1 \n  print \"value is not present in the array \" \n [end of if]  \nStep 6: exit  ";
+            document.getElementById("txt").value=cd;
+        }
+        function displayc()
+        {
+            var cd="//THIS IS C PROGRAMMING \n * C program to input N numbers and store them in an array.\n * Do a linear search for a given key and report success\n * or failure.\n */\n#include <stdio.h>\nvoid main()\n{  int num;\n  int i,  keynum, found = 0;\n printf(\"Enter the number of elements \");\n scanf(\""+"%"+"d\", &num); \n int array[num];\n printf(\"Enter the elements one by one "+"\ "+"n"+"\");\n for (i = 0; i < num; i++)\n  {\n scanf(\""+"%"+"d\" &array[i]);\n }\n printf(\"Enter the element to be searched \");\n scanf(\""+"%"+"d\", &keynum);\n /*  Linear search begins */\n for (i = 0; i < num ; i++) \n {\n if (keynum == array[i] )\n  {\n  found = 1;\n break; \n  }\n }\n  if (found == 1) \n    printf(\"Element is present in the array at position "+"%"+"d\",i+1); \n else\n printf(\"Element is not present in the array"+"\ "+"n"+"\");\n }";
+         document.getElementById("txt").value=cd;
+         
+        }
+        function displayj(){
+            var cd="//THIS IS JAVA PROGRAMMING \n 	import java.util.Scanner; \n class LinearSearchExample2 \n	{ \n public static void main(String args[]) \n { \n int c, n, search, array[]; \n	Scanner in = new Scanner(System.in); \n System.out.println(\"Enter number of elements\"); \n n = in.nextInt(); \n  array = new int[n]; \n System.out.println(\"Enter those \" + n + \" elements\");  \n for (c = 0; c < n; c++) \n   array[c] = in.nextInt(); \n System.out.println(\"Enter value to find\");  \n search = in.nextInt(); \n  for (c = 0; c < n; c++) \n { \n	if (array[c] == search)     /* Searching element is present */  \n {  \n System.out.println(search + \" is present at location \" + (c + 1) + \".\");  \n  break;  \n }  \n }  \n  if (c == n)  /* Element to search isn't present */  \n  System.out.println(search + \" isn't present in array.\");  \n  }  \n }";
+            document.getElementById("txt").value=cd;
+        }
+        function displaycp(){
+            var cd="//THIS IS Cpp PROGRAMMING \n #include < iostream >\n using namespace std;\n void linearSearch(int a[], int n) {\n int temp = -1; \n for (int i = 0; i < 5; i++) {\n if (a[i] == n) { \n cout << \"Element found at position: \" << i + 1 << endl;\n  temp = 0;\n  break;\n  }\n }\n if (temp == -1) { \n cout << \"No Element Found\" << endl; \n}\n }\n int main() {\n int arr[5];\n cout << \"Please enter 5 elements of the Array\" << endl;\n for (int i = 0; i < 5; i++) { \n cin >> arr[i];\n}\n cout <<\"Please enter an element to search\" << endl;\n int num; \n cin >> num; \n linearSearch(arr, num);\n return 0;\n}";
+            document.getElementById("txt").value=cd;
+        }
+
+    </script>  
+</div>
+
+</body>
+</html>

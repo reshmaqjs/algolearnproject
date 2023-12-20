@@ -1,0 +1,78 @@
+<html>
+<head>
+    <style>
+        iframe{
+            border: 0px;
+        }
+        
+        #div1{background-color: rgb(98, 189, 228);
+        color: rgb(192, 125, 79);
+
+        }
+        #myselect{
+            background-color:black;
+        color:azure;
+        }
+        #txt{ background-color:black;
+        color:azure;
+        width: 100%;
+        height: 500px;
+        overflow: scroll;
+
+        }
+        button:hover {
+  background-color: rgb(122, 116, 117) !important;
+  opacity: .5;
+}
+
+button:focus {
+  background-color: rgb(121, 107, 109);
+}
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1><center><font color="black">ALGOLEARN</font></center></h1>
+    <div align="right"><a href="home.html" ><button style="background-color: rgb(98, 189, 228);"><font color="black" size="3">Back to Home </font></button></a></div>
+    <div> <iframe src="selectionsort.html" frameborder="1" height="750" width="99.7%"></iframe></div>
+    
+
+
+    <button value="Algorithm" onclick="displayal()">Algorithm</button>
+    <button value="C" onclick="displayc()">C</button> 
+    <button  value="JAVA" onclick="displayj()">JAVA</button>
+    <button  value="C++" onclick="displaycp()">C++</button><br>
+
+        <textarea id="txt" readonly></textarea>
+    <script>
+        var buttons = $('button');
+buttons.click(function() {
+  buttons.css('background-color', 'snow');
+  $(this).css('background-color', 'pink');
+});
+
+        function displayal(){
+            var cd="Step 1. Read ARR \nStep 2. Repeat step 3 to 6 for I=0 to N-1 \nStep 3. Set MIN=ARR[I] and Set LOC=I \nStep 4. Repeat step 5 for J=I+1 to N \nStep 5. If MIN>ARR[J], then \n (a) Set MIN=ARR[J] \n (b) Set LOC=J \n [End of if] \n [End of step 4 loop] \nStep 6. Interchange ARR[I] and ARR[LOC] using temporary variable \n [End of step 2 outer loop] \nStep 7. Exit";
+            document.getElementById("txt").value=cd;
+        }
+        function displayc()
+        { 
+            var cd="//THIS IS C PROGRAMMING \n  /** C Program to Implement Selection Sort \n */ \n #include <stdio.h> \n void selectionSort(int arr[], int size); \n void swap(int *a, int *b); \n /** Selection sort function \n */ \n void selectionSort(int arr[], int size) \n { \n int i, j; \n for (i = 0 ;  i < size;i++) \n { \n for (j = i ; j < size; j++) \n { \n if (arr[i] > arr[j]) \n swap(&arr[i], &arr[j]); \n } \n } \n } \n /* Function to swap two variables */ \n void swap(int *a, int *b) \n { \n int temp; \n temp = *a; \n *a = *b; \n *b = temp; \n } \n /* \n * Main Function \n */ \n int main() \n { \n int array[10], i, size; \n printf(\"How many numbers you want to sort: \"); \n scanf("+"%"+"d, "+"&"+"size); \n printf(\""+"\ "+"n"+"Enter %d numbers\", size); \n printf("+"\ "+"n"+"); \n for (i = 0; i < size; i++) \n scanf("+"%"+"d, &array[i]); \n  selectionSort(array, size); \n  printf(\""+"\ "+"n"+"Sorted array is \"); \n for (i = 0; i < size;i++) \n       printf("+"%"+"d , array[i]); \n  return 0; \n	} ";
+            document.getElementById("txt").value=cd;
+         
+        }
+        function displayj(){
+            var cd="//THIS IS JAVA PROGRAMMING \n import java.util.Scanner; \n public class CodesCracker \n{ \n public static void main(String[] args) \n { \n int tot, i, j, count, small, index=0, x; \n Scanner scan = new Scanner(System.in); \n System.out.print(\"Enter the Size of Array: \"); \n tot = scan.nextInt(); \n int[] arr = new int[tot];  \n System.out.print(\"Enter \" +tot+ \" Elements for the Array: \"); \n for(i=0; i<tot; i++) \n arr[i] = scan.nextInt(); \n for(i=0; i<(tot-1); i++) \n { \n count=0; \n small = arr[i]; \n for(j=(i+1); j<tot; j++) \n { \n if(small>arr[j]) \n { \n small = arr[j]; \n count++; \n index = j; \n } \n  } \n if(count!=0) \n { \n x = arr[i]; \n arr[i] = small; \n arr[index] = x; \n } \n }\n System.out.println(\"\nThe new sorted array is: \"); \n for(i=0; i<tot; i++) \n System.out.print(arr[i]+ \" \"); \n } \n }";
+            document.getElementById("txt").value=cd;
+        }
+        function displaycp(){
+            var cd="//THIS IS Cpp PROGRAMMING \n #include<iostream> \n using namespace std; \n int main() \n { \n int i,j,n,loc,temp,min,a[30]; \n cout<<\"Enter the number of elements:\"; \n cin>>n; cout<<\""+"\ "+"n"+"Enter the elements"+"\ "+"n"+"\"; \n for(i=0;i<n;i++) \n {  cin>>a[i]; \n   } \n for(i=0;i<n-1;i++) \n {  \n min=a[i]; \n loc=i; \n for(j=i+1;j<n;j++) \n { \n if(min>a[j]) \n { \n min=a[j]; \n loc=j; \n } \n } \n temp=a[i]; \n a[i]=a[loc]; \n a[loc]=temp; \n } \n cout<<\""+"\ "+"n"+"Sorted list is as follows"+"\ "+"n"+"\"; \n for(i=0;i<n;i++) \n { \n cout<<a[i]<<\" \"; \n } \n return 0; \n }";
+            document.getElementById("txt").value=cd;
+        }
+
+    </script>  
+</div>
+
+</body>
+</html>

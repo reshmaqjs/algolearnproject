@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+        iframe{
+            border: 0px;
+        }
+        #div1{background-color: rgb(98, 189, 228);
+        color: rgb(192, 125, 79);
+
+        }
+        #myselect{
+            background-color:black;
+        color:azure;
+        }
+        #txt{ background-color:black;
+        color:azure;
+        width: 100%;
+        height: 500px;
+        overflow: scroll;
+
+        }
+        button:hover {
+  background-color: rgb(122, 116, 117) !important;
+  opacity: .5;
+}
+
+button:focus {
+  background-color: rgb(121, 107, 109);
+}
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1><center><font color="black">ALGOLEARN</font></center></h1>
+    <div align="right"><a href="home.html" ><button style="background-color: rgb(98, 189, 228);"><font color="black" size="3">Back to Home </font></button></a></div>
+    <div> <iframe src="bubblesort (1).html" frameborder="1" height="700" width="99.7%"></iframe></div>
+    
+
+
+    <button value="Algorithm" onclick="displayal()">Algorithm</button>
+    <button value="C" onclick="displayc()">C</button> 
+    <button  value="JAVA" onclick="displayj()">JAVA</button>
+    <button  value="C++" onclick="displaycp()">C++</button><br>
+        <textarea id="txt" readonly></textarea>
+    <script>
+        var buttons = $('button');
+buttons.click(function() {
+  buttons.css('background-color', 'snow');
+  $(this).css('background-color', 'pink');
+});
+        function displayal(){
+            var cd="Step 1. Look at the first number in the list.\n\nStep 2. Compare the current number with the next number. \n\nStep 3. Is the next number smaller than the current number? If so,swap the two numbers around. If not, do not swap. \n\nStep 4. Move to the next number along in the list and make this the current number. \n\nStep 5. Repeat from step 2 until the last number in the list has been reached. \n\nStep 6. If any numbers were swapped, repeat again from step 1. \n\nStep 7. If the end of the list is reached without any swaps being made, then the list is ordered and the algorithm can stop.";
+            document.getElementById("txt").value=cd;
+        }
+        function displayc()
+        {
+            var cd="//THIS IS C PROGRAMMING \n #include <stdio.h>\n//perform the bubble sort\nvoid bubbleSort(int array[], int size) \n// loop to access each array element\nfor (int step = 0; step < size - 1; ++step) {\n// loop to compare array elements\nfor (int i = 0; i < size - step - 1; ++i) {\n// compare two adjacent elements\n // change > to < to sort in descending order\nif (array[i] > array[i + 1]) {\n// swapping occurs if elements\n // are not in the intended order\nint temp = array[i];\narray[i] = array[i + 1];\n array[i + 1] = temp; }\n}\n}\n}\n// print array\nvoid printArray(int array[], int size) {\nfor (int i = 0; i < size; ++i) {\nprintf("+"%"+"d, array[i]);\n}\nprintf("+"\ "+"n"+");\n}\nint main() {\nint data[] = {-2, 45, 0, 11, -9};\n// find the array's length\nint size = sizeof(data) / sizeof(data[0]);\nbubbleSort(data, size);\nprintf("+"Sorted Array in Ascending Order:\ n"+");\nprintArray(data, size);\n}";            
+            document.getElementById("txt").value=cd;
+         
+        }
+        function displayj(){
+            var cd="//THIS IS JAVA PROGRAMMING \n import java.util.Scanner; \n class BubbleSort { \n public static void main(String []args) { \n int n, c, d, swap; \n  Scanner in = new Scanner(System.in); \n System.out.println(\"Input number of integers to sort\"); \n  n = in.nextInt(); \n int array[] = new int[n]; \n System.out.println(\"Enter \" + n + \" integers\"); \n  for (c = 0; c < n; c++) \n array[c] = in.nextInt(); \n for (c = 0; c < ( n - 1 ); c++) \n  { \n  \tfor (d = 0; d < n - c - 1; d++) \n { \n if (array[d] > array[d+1])  /* For descending order use < */ \n  {  \n swap       = array[d]; \n array[d]   = array[d+1]; \n array[d+1] = swap; \n } \n } \n } \n System.out.println(\"Sorted list of numbers\"); \n for (c = 0; c < n; c++) \n System.out.println(array[c]); \n } \n }";
+            document.getElementById("txt").value=cd;
+        }
+        function displaycp(){
+            var cd="//THIS IS Cpp PROGRAMMING \n #include <stdio.h> \n int main() \n { \n int arr[50], num, x, y, temp;  \n   printf(\"Please Enter the Number of Elements you want in the array: \"); \n scanf("+"%"+"d, &num); \n       printf(\"Please Enter the Value of Elements: \"); \n for(x = 0; x < num; x++) \n scanf("+"%"+"d, &arr[x]); \n for(x = 0; x < num - 1; x++) \n {   \n     for(y = 0; y < num - x - 1; y++) \n {    \n      if(arr[y] > arr[y + 1]) \n { \n   temp = arr[y]; \n arr[y] = arr[y + 1]; \n arr[y + 1] = temp; \n } \n  } \n  }  \n printf(\"Array after implementing bubble sort: \"); \n  for(x = 0; x < num; x++) \n {  \n printf("+"%"+"d, arr[x]); \n  } \n  return 0; \n }";
+            document.getElementById("txt").value=cd;
+        }
+
+    </script>  
+</div>
+
+</body>
+</html>
